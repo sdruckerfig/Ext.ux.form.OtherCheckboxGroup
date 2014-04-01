@@ -12,7 +12,7 @@ Ext.define('Ext.ux.layout.container.CheckboxOther', {
                 '</td>',
             '</tpl>',
         '</tr>',
-        '<tr><td colspan="{[values.columns.length]}" class="{colCls}" valign="top" style="{style}" role="presentation"></td></tr>',
+        '<tr><td colspan="{[values.columnCount]}" class="{colCls}" valign="top" style="{style}" role="presentation"></td></tr>',
         '</tbody>',
         '</table>'
     ]

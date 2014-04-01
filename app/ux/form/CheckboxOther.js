@@ -17,8 +17,10 @@ Ext.define('Ext.ux.form.CheckboxOther', {
 
 		// prevent checkboxes from submitting
 		
-		for (var i=0; i<this.items.length; i++) {
-			this.items[i].submitValue = false;
+		if (this.items) { 
+			for (var i=0; i<this.items.length; i++) {
+				this.items[i].submitValue = false;
+			}
 		}
 
 		this.callParent(arguments);
