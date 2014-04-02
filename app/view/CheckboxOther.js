@@ -3,7 +3,7 @@ Ext.define('Ext.ux.form.CheckboxOther', {
 	alias: 'widget.checkboxgroupother',
 	requires: ['MyApp.view.CheckboxOtherLayout'],
 	layout: 'checkboxgroupother',
-	
+
 	config: {
 		otherBoxLabel: 'Other :',
 		otherName: ''
@@ -16,7 +16,7 @@ Ext.define('Ext.ux.form.CheckboxOther', {
 	initComponent: function() {
 
 
-		for (var i=0; i<this.items.length; i++) {
+		for (var i = 0; i < this.items.length; i++) {
 			this.items[i].submitValue = false;
 		}
 
@@ -27,7 +27,7 @@ Ext.define('Ext.ux.form.CheckboxOther', {
 
 		this.callParent(arguments);
 		var tm = Ext.create('Ext.util.TextMetrics');
-		var labelWidth = tm.getWidth(this.getOtherBoxLabel());
+		var labelWidth = tm.getWidth(this.getOtherBoxLabel()) + 5; // add 5 for "slop"
 		var colspanEl = Ext.get(this.getEl().select('td [colspan=' + this.columns + ']').elements[0]);
 
 		this.textfield = Ext.widget('textfield', {
@@ -36,6 +36,9 @@ Ext.define('Ext.ux.form.CheckboxOther', {
 			margin: '10 0 0 0',
 			width: '100%',
 			fieldLabel: this.getOtherBoxLabel(),
+			style: {
+				'table-layout': 'auto !important'
+			},
 			name: this.getOtherName(),
 			listeners: {
 				change: {
